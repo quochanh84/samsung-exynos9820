@@ -55,13 +55,12 @@ jobs:
           set -e -o pipefail
           ./cruelbuild config                    \
                        model=${{ matrix.model }} \
-                       name="Cruel-devel"        \
+                       name="HoangLong-CruelN"   \
                        toolchain=$TOOLCHAIN      \
                        +magisk                   \
-                       +nohardening              \
-                       +ttl                      \
+                       +performance              \
                        +wireguard                \
-                       +cifs                     \
+                       +io_cfq                   \
                        +sdfat                    \
                        +ntfs                     \
                        +force_dex_wqhd           \
