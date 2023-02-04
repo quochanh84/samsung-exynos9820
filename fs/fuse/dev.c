@@ -2196,6 +2196,8 @@ EXPORT_SYMBOL_GPL(fuse_abort_conn);
 
 void fuse_wait_aborted(struct fuse_conn *fc)
 {
+	/* matches implicit memory barrier in fuse_drop_waiting() */
+	smp_mb();
 	fuse_wait_event(fc->blocked_waitq, atomic_read(&fc->num_waiting) == 0);
 }
 
