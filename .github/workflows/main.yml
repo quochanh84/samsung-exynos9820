@@ -58,6 +58,7 @@ jobs:
                        name="NightBloom"        \
                        toolchain=$TOOLCHAIN      \
                        +magisk=delta                   \
+                       os_patch_level=2023-04                   \
                        +nohardening              \
                        +performance                      \
                        +wireguard                \
