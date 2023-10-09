@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        model: [ "G970F,G973F,G975F", "N975F" ]
+        model: [ "N976N", "G977N" ]
 
     steps:
       - uses: actions/checkout@v3
@@ -55,13 +55,13 @@ jobs:
           set -e -o pipefail
           ./cruelbuild config                    \
                        model=${{ matrix.model }} \
-                       name="Cruel-devel"        \
+                       name="NightBloom"        \
                        toolchain=$TOOLCHAIN      \
-                       +magisk                   \
+                       +magisk=delta                   \
                        +nohardening              \
-                       +ttl                      \
+                       +performance                      \
                        +wireguard                \
-                       +cifs                     \
+                       +nodebug                     \
                        +sdfat                    \
                        +ntfs                     \
                        +force_dex_wqhd           \
