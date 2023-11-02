@@ -97,7 +97,8 @@ struct sx9330_p {
 	s32 max_normal_diff;
 
 	int debug_count;
-	char hall_ic[6];
+#define HALL_IC_LEN 6
+	char hall_ic[HALL_IC_LEN];
 };
 
 static int sx9330_check_hallic_state(char *file_path, char hall_ic_status[HALL_IC_LEN])
